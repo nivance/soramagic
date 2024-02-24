@@ -18,16 +18,16 @@
     "moreExample": "more example videos"
   },
   "privacyPolicy": {
-    "title": "Privacy Policy ｜ SoraMagic",
+    "title": "Privacy Policy ｜ SoraMagic: Open source text-to-video Gate with OpenAI's Sora model",
     "mainDescription": "SoraMagic is an open-source platform enabling users to easily create videos from text with OpenAI's Sora model.",
     "h1": "Privacy Policy",
-    "date": "Last updated: February 19, 2024",
+    "date": "Last updated: February 24, 2024",
     "desc": "Thank you for choosing SoraMagic! This Privacy Policy outlines how we collect, use, and protect your information when you use our website located at ",
     "h4_1": "1、Information We Collect:",
     "h4_1_pa": "a. Personal Data: When you use SoraMagic, we may collect your name, email address, and payment information for order processing purposes.",
     "h4_1_pb": "b. Non-Personal Data: We may also collect non-personal data through web cookies to enhance your browsing experience.",
     "h4_2": "2、Purpose of Data Collection:",
-    "h4_2_p": "We collect your personal data solely for order processing purposes.",
+    "h4_2_p": "We collect your personal data solely for order processing.",
     "h4_3": "3、Data Sharing:",
     "h4_3_p": "We do not share your personal data with any third parties.",
     "h4_4": "4、Children's Privacy:",
@@ -38,7 +38,7 @@
     "h4_6_p": "If you have any questions or concerns regarding our Privacy Policy, please contact us at"
   },
   "termsOfService": {
-    "title": "Terms of Service ｜ SoraMagic",
+    "title": "Terms of Service ｜ SoraMagic: Open source text-to-video Gate with OpenAI's Sora model",
     "mainDescription": "SoraMagic is an open-source platform enabling users to easily create videos from text with OpenAI's Sora model.",
     "h1": "Terms of Service",
     "date": "Last updated: February 19, 2024",
