@@ -3,7 +3,7 @@
     "lang": "en",
     "language": "English",
     "languageInChineseSimple": "英语",
-    "title": "SoraMagic",
+    "title": "SoraMagic: Open source text-to-video Gate with OpenAI's Sora model",
     "description": "SoraMagic is an open-source platform enabling users to easily create videos from text with OpenAI's Sora model.",
     "loadingText": "Loading...",
     "generateText": "Generating...",
