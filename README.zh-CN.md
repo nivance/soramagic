@@ -25,22 +25,22 @@ SoraWebui 是一个开源项目，允许用户使用 OpenAI 的 Sora 模型使�
 ## 快速开始
 
 ### 在 Vercel 上部署
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSoraWebui%2FSoraWebui&project-name=SoraWebui&repository-name=SoraWebui&external-id=https%3A%2F%2Fgithub.com%2FSoraWebui%2FSoraWebui%2Ftree%2Fmain)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnivance%2Fsoramagic&project-name=soramagic&repository-name=soramagic&external-id=https%3A%2F%2Fgithub.com%2Fnivance%2Fsoramagic%2Ftree%2Fmain)
 
 ### 1. 克隆项目
 
 ```bash
-git clone git@github.com:SoraWebui/SoraWebui.git
+git clone git@github.com:nivance/soramagic.git
 ```
 
 ### 2. 安装依赖
 
 ```bash
-cd SoraWebui && yarn
+cd soramagic && yarn
 #or
-cd SoraWebui && npm install
+cd soramagic && npm install
 #or
-cd SoraWebui && pnpm install
+cd soramagic && pnpm install
 ```
 
 ### 3. 复制 .env.example 并将其重命名为 .env.local
@@ -65,10 +65,9 @@ npm run dev
 pnpm dev
 ```
 
-### 4. 在浏览器打开 [http://localhost](http://localhost)
-![success_deploy.jpg](https://soramagic.co/success_deploy.jpg)
+### 4. 在浏览器打开 [http://localhost:3000](http://localhost:3000)
 
 
 # 重要事项
-SoraWebui 需要 [FakeSoraAPI](https://github.com/SoraWebui/FakeSoraAPI) 才能正常运行。
+Soramagic 需要 [FakeSoraAPI](https://github.com/SoraWebui/FakeSoraAPI) 才能正常运行。
 
