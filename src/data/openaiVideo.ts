@@ -304,3 +304,7 @@ export const randomVideo = (count:number) => {
   }
   return resultVideoList;
 }
+
+export const getVideoByNumber = (number:string) => {
+  return allVideoList.find(item => item.number === number);
+}

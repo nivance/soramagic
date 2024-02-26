@@ -75,7 +75,8 @@
   },
   "videosPage": {
     "title": "视频：Sora 生成的视频、Sora 生成的最新视频。",
-    "description": "Sora 生成的视频，Sora 生成的最新视频。 | soramagic.co"
+    "description": "Sora 生成的视频，Sora 生成的最新视频。 | soramagic.co",
+    "relatedVideos": "相关AI生成视频"
   },
   "worksPage": {
     "title": "作品：生成视频历史。",

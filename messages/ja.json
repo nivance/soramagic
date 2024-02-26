@@ -75,7 +75,8 @@
   },
   "videosPage": {
     "title": "動画：Soraによって生成されたサンプル動画、Soraによって生成された最新動画。",
-    "description": "サンプル動画、Soraによって生成された最新動画。 | soramagic.co"
+    "description": "サンプル動画、Soraによって生成された最新動画。 | soramagic.co",
+    "relatedVideos": "Related Videos"
   },
   "worksPage": {
     "title": "作品: ビデオ履歴を生成する。",

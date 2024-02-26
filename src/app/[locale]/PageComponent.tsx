@@ -147,26 +147,26 @@ const PageComponent = ({
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-6 py-4">
                   {videoList.map((file) => (
-                    <div key={file.prompt}>
-                      <div
-                        className="rounded-xl flex justify-center items-start">
-                        <video
-                          src={file.videoUrl}
-                          controls={true}
-                          autoPlay={false}
-                          playsInline={true}
-                          preload={"metadata"}
-                          controlsList={"nodownload"}
-                          onMouseOver={handleMouseEnter}
-                          onMouseLeave={handleMouseLeave}
-                          style={{width: '90%', height: '240px'}}
-                        />
+                    <a key={file.number} href={`/${locale}/video/${file.number}`} target="_self">
+                      <div key={file.prompt}>
+                        <div className="rounded-xl flex justify-center items-start">
+                          <video
+                            src={file.videoUrl}
+                            controls={true}
+                            autoPlay={false}
+                            playsInline={true}
+                            preload={"metadata"}
+                            controlsList={"nodownload"}
+                            onMouseOver={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            style={{width: '90%', height: '240px'}}
+                          />
+                        </div>
+                        <div className={"flex justify-center items-center"}>
+                          <p className="pointer-events-none mt-2 block text-sm font-medium text-gray-400 w-[90%] max-h-20 overflow-hidden overflow-ellipsis">{indexLanguageText.prompt}: {file.prompt}</p>
+                        </div>
                       </div>
-                      <div className={"flex justify-center items-center"}>
-                        <p
-                          className="pointer-events-none mt-2 block text-sm font-medium text-gray-400 w-[90%] max-h-20 overflow-hidden overflow-ellipsis">{indexLanguageText.prompt}: {file.prompt}</p>
-                      </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
                 <div key={"more"} className={"px-6 py-4"}>
