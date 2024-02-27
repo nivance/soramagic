@@ -32,7 +32,7 @@ export default async function ({
   params: { locale: string; uuid: string };
 }) {
   const locale = params.locale;
-  const video = getVideoByNumber(params.uuid);
+  const video = getVideoByNumber(params.uuid.replace("sora-video-", ""));
   const videos = randomVideo(3);
   const indexLanguageText = getIndexPageText(locale);
   const videosPageText = getVideosPageText(locale);
@@ -82,7 +82,7 @@ export default async function ({
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 px-6 py-14">
             {videos.map((file) => (
-              <a key={file.number} href={`/${locale}/video/${file.number}`} target="_self">
+              <a key={file.number} href={`/${locale}/video/sora-video-${file.number}`} target="_self">
                 <div key={file.prompt}>
                   <div className="rounded-xl flex justify-center items-start">
                     <video

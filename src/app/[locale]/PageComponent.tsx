@@ -147,7 +147,7 @@ const PageComponent = ({
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-6 py-4">
                   {videoList.map((file) => (
-                    <a key={file.number} href={`/${locale}/video/${file.number}`} target="_self">
+                    <a key={file.number} href={`/${locale}/video/sora-video-${file.number}`} target="_self">
                       <div key={file.prompt}>
                         <div className="rounded-xl flex justify-center items-start">
                           <video
