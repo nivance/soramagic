@@ -35,29 +35,30 @@ const PageComponent = ({
       </div>
 
       <div className={"w-[90%] mx-auto mb-20"}>
-        <div role="list"
-             className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div role="list" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {allVideoList.map((file) => (
-            <div key={file.prompt}>
-              <div
-                className="rounded-xl flex justify-center items-start">
-                <video
-                  src={file.videoUrl}
-                  controls={true}
-                  autoPlay={false}
-                  playsInline={true}
-                  preload={"metadata"}
-                  controlsList={"nodownload"}
-                  style={{width: '90%', height: '240px'}}
-                  onMouseOver={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                />
+            <a key={file.number} href={`/${locale}/video/${file.number}`} target="_self">
+              <div key={file.prompt}>
+                <div
+                  className="rounded-xl flex justify-center items-start">
+                  <video
+                    src={file.videoUrl}
+                    controls={true}
+                    autoPlay={false}
+                    playsInline={true}
+                    preload={"metadata"}
+                    controlsList={"nodownload"}
+                    style={{width: '90%', height: '240px'}}
+                    onMouseOver={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  />
+                </div>
+                <div className={"flex justify-center items-center"}>
+                  <p
+                    className="pointer-events-none mt-2 block text-sm font-medium text-white w-[90%]">{indexLanguageText.prompt}: {file.prompt}</p>
+                </div>
               </div>
-              <div className={"flex justify-center items-center"}>
-                <p
-                  className="pointer-events-none mt-2 block text-sm font-medium text-white w-[90%]">{indexLanguageText.prompt}: {file.prompt}</p>
-              </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
