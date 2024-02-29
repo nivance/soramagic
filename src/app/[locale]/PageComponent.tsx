@@ -2,18 +2,16 @@
 import {useRouter} from "next/navigation";
 import Header from '~/components/Header';
 import Footer from '~/components/Footer';
+import VideoStatic from "~/components/VideoStatic";
 import {useState} from "react";
-import {randomVideo} from "~/data/openaiVideo";
+// import {randomVideo} from "~/data/openaiVideo";
 import HeadInfo from "~/components/HeadInfo";
 import {useCommonContext} from "~/context/common-context";
 import Link from "next/link";
+import { Video } from "@prisma/client";
 
-const PageComponent = ({
-                         locale = '',
-                         indexLanguageText,
-                         initVideoList = [],
-                         questionText
-                       }) => {
+const PageComponent = ({locale = '', indexLanguageText, initVideoList = [], questionText}: 
+                       {locale: string; indexLanguageText:any; initVideoList: Video[]; questionText: any }) => {
   const router = useRouter();
 
   const [textStr, setTextStr] = useState('');
@@ -23,7 +21,7 @@ const PageComponent = ({
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (!textStr) {
-      setVideoList(randomVideo(12));
+      // setVideoList(randomVideos(12));
       return;
     }
     setShowGeneratingModal(true);
@@ -77,14 +75,6 @@ const PageComponent = ({
 
   const [videoList, setVideoList] = useState(initVideoList);
 
-  const handleMouseEnter = (event) => {
-    event.target.play();
-  };
-
-  const handleMouseLeave = (event) => {
-    event.target.pause();
-  };
-
   return (
     <>
       <HeadInfo
@@ -104,71 +94,13 @@ const PageComponent = ({
                 <p className="mx-auto mb-6 text-center text-sm text-[#636262] sm:px-8 sm:text-xl md:px-24 lg:mb-8">{indexLanguageText.pDescription}</p>
               </div>
             </div>
-            {/* <div>
-              <div
-                className={"w-[90%] mx-auto rounded-tl-[30px] rounded-tr-[30px] border-[12px] border-[#ffffff1f] object-fill"}>
-                <form onSubmit={handleSubmit} className="relative shadow-lg">
-                  <div
-                    className="overflow-hidden focus-within:ring-1 focus-within:ring-indigo-500 rounded-tl-[20px] rounded-tr-[20px]">
-                    <textarea
-                      rows={8}
-                      name="description"
-                      id="description"
-                      className="block w-full resize-none border-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 text-lg pt-4 pl-4"
-                      placeholder={indexLanguageText.placeholderText}
-                      value={textStr}
-                      onChange={(e) => {
-                        setTextStr(e.target.value);
-                      }}
-                      maxLength={1000}
-                    />
-                  </div>
-                  <div className="inset-x-px bottom-1 bg-white">
-                    <div
-                      className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2">
-                      <div className="pt-2 w-1/4">
-                        <button
-                          type="submit"
-                          className="w-full inline-flex justify-center items-center rounded-md bg-[#2d6ae0] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-800"
-                        >
-                          {indexLanguageText.buttonText}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div> */}
             <div className={"object-fill w-[90%] mx-auto mt-8"}>
               <div className={"mx-auto bg-black"}>
                 <div className={"pb-2 border-b-2"}>
                   <h2
                     className={"text-white pt-4 text-4xl flex justify-center items-center"}>{indexLanguageText.soraVideoExample}</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-6 py-4">
-                  {videoList.map((file) => (
-                    <a key={file.number} href={`/${locale}/video/sora-video-${file.number}`} target="_self">
-                      <div key={file.prompt}>
-                        <div className="rounded-xl flex justify-center items-start">
-                          <video
-                            src={file.videoUrl}
-                            controls={true}
-                            autoPlay={false}
-                            playsInline={true}
-                            preload={"metadata"}
-                            controlsList={"nodownload"}
-                            onMouseOver={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            style={{width: '90%', height: '240px'}}
-                          />
-                        </div>
-                        <div className={"flex justify-center items-center"}>
-                          <p className="pointer-events-none mt-2 block text-sm font-medium text-gray-400 w-[90%] max-h-20 overflow-hidden overflow-ellipsis">{indexLanguageText.prompt}: {file.prompt}</p>
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
+                <VideoStatic locale={locale} promptTag={indexLanguageText.prompt} videoList={videoList}/>
                 <div key={"more"} className={"px-6 py-4"}>
                   <Link href={`/${locale}/videos`}
                         className={"flex justify-center items-center text-xl text-white hover:text-gray-500"}>

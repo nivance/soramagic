@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+datasource db {
+  provider = "postgresql"
+  // Uses connection pooling
+  url = env("POSTGRES_PRISMA_URL")
+  // Uses direct connection, ⚠️ make sure to keep this to `POSTGRES_URL_NON_POOLING`
+  // or you'll have dangling databases from migrations
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+ 
+model User {
+  id            String  @id @default(uuid())
+  name          String?
+  email         String  @unique
+  avatarUrl     String  @map(name: "avatar_url")
+  password      String?
+  createdAt     DateTime @default(now()) @map(name: "created_at")
+}
+
+model Video {
+  id            String  @id @default(uuid())
+  userUuid      String?  @map(name: "user_uuid")
+  username      String
+  userAvatarUrl String  @map(name: "user_avatar_url")
+  number        String  @unique
+  prompt        String
+  keywords      String?
+  videoUrl      String  @map(name: "video_url")
+  coverUrl      String?  @map(name: "cover_url")
+  postUrl       String?  @map(name: "post_url")
+  provider      String
+  publishDate   String  @map(name: "publish_date")
+  createdAt     DateTime @default(now()) @map(name: "created_at")
+}

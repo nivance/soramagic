@@ -45,17 +45,40 @@ cd soramagic && npm install
 cd soramagic && pnpm install
 ```
 
-### 3. copy .env.example and rename it to .env.local
+### 3. modify .env.local postgres config
 
 ```bash
 # website URL
 NEXT_PUBLIC_SITE_URL=http://localhost
+
+POSTGRES_URL=
+POSTGRES_PRISMA_URL=
+POSTGRES_URL_NON_POOLING=
+POSTGRES_USER=
+POSTGRES_HOST=
+POSTGRES_PASSWORD=
+POSTGRES_DATABASE=
 
 # openai config
 OPENAI_API_KEY=sk-XXXXXX
 OPENAI_API_BASE_URL=http://localhost:8081
 OPENAI_API_MODEL=sora-1.0-turbo
 ```
+
+### 4. postgres database
+
+#### 4.1 init
+
+```bash
+cd soramagic && npx prisma db push --schema=./src/prisma/schema.prisma
+```
+
+#### 4..2. check
+
+```bash
+cd soramagic && npx prisma studio --schema=./src/prisma/schema.prisma
+```
+
 
 ### 4. Run it
 

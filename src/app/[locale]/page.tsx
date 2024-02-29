@@ -1,6 +1,7 @@
 import PageComponent from "./PageComponent";
 import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
-import {allVideoList, randomVideo} from "~/data/openaiVideo";
+// import {allVideoList, randomVideo} from "~/data/openaiVideo";
+import {randomVideos} from "~/lib/video"
 
 export default async function IndexPage({params: {locale = ''}}) {
   // Enable static rendering
@@ -33,7 +34,7 @@ export default async function IndexPage({params: {locale = ''}}) {
     h2_4_p1: tIndexQuestion('h2_4_p1'),
   }
 
-  const initVideoList = randomVideo(12);
+  const initVideoList = await randomVideos(12);
 
   return (
     <PageComponent
@@ -41,8 +42,7 @@ export default async function IndexPage({params: {locale = ''}}) {
       indexLanguageText={indexLanguageText}
       initVideoList={initVideoList}
       questionText={questionText}
-    >
-
+    >    
     </PageComponent>
   )
 }

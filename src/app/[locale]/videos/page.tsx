@@ -1,6 +1,6 @@
 import PageComponent from "./PageComponent";
 import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
-import {allVideoList} from "~/data/openaiVideo";
+import { randomVideos } from "~/lib/video";
 
 export default async function Videos({params: {locale = ''}}) {
   // Enable static rendering
@@ -27,7 +27,7 @@ export default async function Videos({params: {locale = ''}}) {
     description: tVideosPage('description'),
   }
 
-  const initVideoList = allVideoList;
+  const initVideoList = await randomVideos(48);
 
   return (
     <PageComponent
