@@ -70,13 +70,13 @@ OPENAI_API_MODEL=sora-1.0-turbo
 #### 4.1 init
 
 ```bash
-cd soramagic && npx prisma db push --schema=./src/prisma/schema.prisma
+cd soramagic && npm run prisma:push
 ```
 
 #### 4..2. check
 
 ```bash
-cd soramagic && npx prisma studio --schema=./src/prisma/schema.prisma
+cd soramagic && npm run prisma:studio
 ```
 
 

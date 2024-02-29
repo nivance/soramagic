@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "prisma generate --schema=./src/prisma/schema.prisma && next build",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prisma:studio": "prisma studio --schema=./src/prisma/schema.prisma",
+    "prisma:push": "prisma db push --schema=./src/prisma/schema.prisma"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
