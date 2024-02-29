@@ -18,7 +18,7 @@ const VideoStatic = ({locale = '', promptTag, videoList = []}) => {
                 <div key={video.prompt}>
                     <div className="rounded-xl flex justify-center items-start">
                         <video
-                            src={video.videoUrl}
+                            src={video.video_url}
                             controls={true}
                             autoPlay={false}
                             playsInline={true}
@@ -30,15 +30,19 @@ const VideoStatic = ({locale = '', promptTag, videoList = []}) => {
                         />
                     </div>
                     <div className={"flex justify-center items-center"}>
-                        <p className="pointer-events-none mt-2 block text-sm font-medium text-gray-400 w-[100%] max-h-20 overflow-hidden overflow-ellipsis">{promptTag}: {video.prompt}</p>
+                        <p className="pointer-events-none mt-2 block font-medium text-gray-400 w-[100%] max-h-20 overflow-hidden overflow-ellipsis">{promptTag}: {video.prompt}</p>
                     </div>
-                    <div className="mb-4 mt-4 flex flex-row items-center">
-                        <img 
-                        src={video.userAvatarUrl} 
-                        alt={video.username} 
-                        className="rounded-full inline-block w-6 h-6 mr-1"/>
-                        <p className="text-sm text-white">{video.username}</p>
-                        <span className="text-white">{video.publishDate}</span>
+                    <div className="mb-4 mt-4 flex flex-row items-center justify-between">
+                        <div className="flex justify-start ml-2">
+                            <img 
+                                src={video.user_avatar_url} 
+                                alt={video.username} 
+                                className="rounded-full inline-block w-6 h-6 mr-1"/>
+                            <p className="text-sm text-white">{video.username}</p>
+                        </div>
+                        <div className="flex justify-end mr-2">
+                            <p className="text-sm text-white justify-end">{video.publish_date}</p>
+                        </div>
                     </div>
                 </div>
             </a>

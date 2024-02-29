@@ -46,7 +46,7 @@ export default async function ({
         <div className="relative w-full bg-black pb-56.75 shadow-sm">
           <video
             style={{width: '65%', height: '65%', margin: 'auto', alignItems: 'center'}}
-            src={video.videoUrl} 
+            src={video.video_url} 
             controls={true} 
             preload={"metadata"} 
             loop 
@@ -59,9 +59,9 @@ export default async function ({
             <p className="mb-4 text-white flex flex-row font-bold text-sm">{promptTag}: {video.prompt}</p>
             <div className="text-white font-bold text-sm flex items-center justify-between">
               <div className="flex items-center">
-                <img src={video.userAvatarUrl} alt={video.username} className="rounded-full inline-block w-6 h-6 mr-1"/>{video.username}
+                <img src={video.user_avatar_url} alt={video.username} className="rounded-full inline-block w-6 h-6 mr-1"/>{video.username}
               </div>
-              <span className="mr-[35%]">{video.publishDate}</span>
+              <span className="mr-[35%]">{video.publish_date}</span>
             </div>
           </div>
         </div>

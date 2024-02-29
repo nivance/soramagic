@@ -42,7 +42,7 @@ const PageComponent = ({
                 <div
                   className="rounded-xl flex justify-center items-start">
                   <video
-                    src={video.videoUrl}
+                    src={video.video_url}
                     controls={true}
                     autoPlay={false}
                     playsInline={true}
@@ -54,7 +54,7 @@ const PageComponent = ({
                   />
                 </div>
                 <div className="mb-4 mt-4 flex flex-row items-center">
-                  <img src={video.userAvatarUrl} alt={video.username} className="w-8 h-8 rounded-full mr-2"/>
+                  <img src={video.user_avatar_url} alt={video.username} className="w-8 h-8 rounded-full mr-2"/>
                   <p className="text-sm text-white">{video.username}</p>
                 </div>
                 <div className={"flex justify-center items-center"}>

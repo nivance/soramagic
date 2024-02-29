@@ -15,23 +15,23 @@ model User {
   id            String  @id @default(uuid())
   name          String?
   email         String  @unique
-  avatarUrl     String  @map(name: "avatar_url")
+  avatar_url    String  @map(name: "avatar_url")
   password      String?
   createdAt     DateTime @default(now()) @map(name: "created_at")
 }
 
 model Video {
-  id            String  @id @default(uuid())
-  userUuid      String?  @map(name: "user_uuid")
-  username      String
-  userAvatarUrl String  @map(name: "user_avatar_url")
-  number        String  @unique
-  prompt        String
-  keywords      String?
-  videoUrl      String  @map(name: "video_url")
-  coverUrl      String?  @map(name: "cover_url")
-  postUrl       String?  @map(name: "post_url")
-  provider      String
-  publishDate   String  @map(name: "publish_date")
-  createdAt     DateTime @default(now()) @map(name: "created_at")
+  id                String  @id @default(uuid())
+  user_uuid          String? @map(name: "user_uuid")
+  username          String
+  user_avatar_url   String  @map(name: "user_avatar_url")
+  number            String  @unique
+  prompt            String
+  keywords          String?
+  video_url         String  @map(name: "video_url")
+  cover_url         String? @map(name: "cover_url")
+  post_url          String? @map(name: "post_url")
+  provider          String
+  publish_date      String  @map(name: "publish_date")
+  createdAt         DateTime @default(now()) @map(name: "created_at")
 }
